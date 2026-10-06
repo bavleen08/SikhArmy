@@ -1,0 +1,21 @@
+{
+  "name": "sikharmy",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "bavleen",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "npm run dev --prefix backend",
+    "dev:client": "npm run dev --prefix frontend/my-react-app",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "npm run build --prefix frontend"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "concurrently": "^10.0.5",
+    "react-icons": "^5.7.0"
+  }
+}
