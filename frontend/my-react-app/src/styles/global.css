@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-/* =========================
-   GLOBAL
-========================= */
 
 * {
   margin: 0;
@@ -147,7 +144,7 @@ h2 {
     opacity: 1;
     transform: translateY(0);
   }
-} */
+}
 
 /* =========================
    SCROLLBAR
