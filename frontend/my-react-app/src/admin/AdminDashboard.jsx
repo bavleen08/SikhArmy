@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config';
+import logo from "../assets/sikh_army_logo.png";
 
 const AdminDashboard = () => {
   const { user } = useContext(AuthContext);
@@ -15,7 +17,7 @@ const AdminDashboard = () => {
 
     const fetchStats = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/admin', {
+        const res = await fetch(`${API_URL}/api/admin`, {
           headers: { Authorization: `Bearer ${user.token}` }
         });
         const data = await res.json();
@@ -56,7 +58,7 @@ const AdminDashboard = () => {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '5px' }}>
-        <img src="/src/assets/sikh_army_logo.png" alt="Logo" style={{ height: '40px', width: '40px', borderRadius: '8px', objectFit: 'cover', filter: 'drop-shadow(0 0px 10px rgba(249, 115, 22, 0.3))' }} />
+        <img src={logo} alt="Logo" style={{ height: '40px', width: '40px', borderRadius: '8px', objectFit: 'cover', filter: 'drop-shadow(0 0px 10px rgba(249, 115, 22, 0.3))' }} />
         <h2 style={{ margin: 0 }}>Admin Dashboard</h2>
       </div>
       <p style={{ color: '#a1a1aa', marginBottom: '30px', fontSize: '1.1rem' }}>Welcome back, <span style={{color: '#fff'}}>{user?.name}</span></p>
