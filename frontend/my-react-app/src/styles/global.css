@@ -2,29 +2,38 @@
 
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  background: #09090b;
-  min-height: 100%;
+    background: #09090b;
+    min-height: 100%;
 }
 
 body {
-  background: #09090b;
-  color: #fafafa;
-  min-height: 100vh;
-  overflow-x: hidden;
+    background: #09090b;
+    color: #fafafa;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 #root {
-  min-height: 100vh;
-  background: #09090b;
+    min-height: 100vh;
+    background: #09090b;
+    overflow-x: hidden;
 }
-
 a {
   text-decoration: none;
   color: inherit;
@@ -61,11 +70,11 @@ button:disabled {
 }
 
 .home-container {
-  padding: 40px 20px;
-  max-width: 1400px;
-  margin: 0 auto;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
 }
-
 /* =========================
    HEADINGS
 ========================= */
@@ -166,3 +175,4 @@ h2 {
 ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
 }
+

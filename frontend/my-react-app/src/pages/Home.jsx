@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="hero-banner">
-        <p>A piece of heritage made with faith and devotion.</p>
+        <p>A piece of Sikh Heritage made with faith and devotion!</p>
       </div>
       <h2 className='featured'>Featured Products</h2>
       {loading ? (

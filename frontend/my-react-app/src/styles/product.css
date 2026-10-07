@@ -1,11 +1,11 @@
-
-
 .hero-banner {
     position: relative;
-    min-height: 320px;
+    min-height: 300px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
 
     background-image: url("/coverimg.jpeg");
@@ -27,25 +27,30 @@
     position: relative;
     z-index: 1;
 
-    max-width: 800px;
+    max-width: 750px;
     padding: 20px;
 
-    font-size: 2rem;
-    line-height: 1.3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 500;
+
+    font-size: 1.8rem;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+
     margin: 0;
 
-    color: white;
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 768px) {
     .hero-banner {
-        min-height: 240px;
-        background-position: center;
+        min-height: 230px;
     }
 
     .hero-banner p {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         padding: 15px;
     }
 }
@@ -385,7 +390,7 @@
 }
 
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -419,6 +424,42 @@
     font-size: 17px;
     margin-bottom: 10px;
   }
+} */
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .product-card {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .product-image {
+        height: 150px;
+    }
+
+    .product-info {
+        padding: 10px;
+    }
+
+    .product-info h3 {
+        font-size: 0.95rem;
+        margin-bottom: 7px;
+    }
+
+    .price {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .view-button-details {
+        font-size: 0.8rem;
+        padding-bottom: 10px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -427,4 +468,16 @@
     margin-right: 2.5rem;
     padding: 10px;
   }
+}
+
+
+.product-grid {
+    width: 100%;
+    height: auto !important;
+    min-height: 0;
+    overflow: visible !important;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
 }
