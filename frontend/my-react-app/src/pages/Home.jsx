@@ -27,7 +27,7 @@ const Home = () => {
       <div className="hero-banner">
         <p>A piece of Sikh Heritage made with faith and devotion!</p>
       </div>
-      <h2 className='featured'>Featured Products</h2>
+      <h2 className='featured' style={{ marginTop: '10px' }}>Featured Products</h2>
       {loading ? (
         <div>Loading...</div>
       ) : (
