@@ -28,7 +28,7 @@ const Navbar = () => {
                 <li><Link to="/cart">Cart ({cartItems.length})</Link></li>
                 {user ? (
                 <>
-                <li><Link to="/profile">Hi, {user.name}</Link></li>
+                <li><Link to="/profile">Hi, {user.name.split(" ")[0]}</Link></li>
                 {user.role === 'admin' && <li><Link to="/admin">Admin</Link></li>}
                 <li><button onClick={handleLogout} className="btn-logout">Logout</button></li>
                 </>

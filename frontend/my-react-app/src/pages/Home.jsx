@@ -25,8 +25,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="hero-banner">
-        <h1>Welcome to SikhArmy</h1>
-        <p>Discover the best shastars at unbeatable prices.</p>
+        <p>A piece of heritage made with faith and devotion.</p>
       </div>
       <h2 className='featured'>Featured Products</h2>
       {loading ? (

@@ -2,7 +2,7 @@
    HERO BANNER
 ========================= */
 
-.hero-banner {
+/* .hero-banner {
   background:
     radial-gradient(
       circle at top right,
@@ -19,18 +19,29 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
+} */
+
+.hero-banner {
+    position: relative;
+    background-image: url("/coverimg.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
 }
 
-.hero-banner h1 {
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.hero-banner p {
   font-size: 3.5rem;
   margin-bottom: 20px;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
-.hero-banner p {
-  font-size: 1.2rem;
-  color: #d4d4d8;
-}
 
 /* =========================
    PRODUCT GRID
