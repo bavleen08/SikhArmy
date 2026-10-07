@@ -59,21 +59,7 @@
    PRODUCT GRID
 ========================= */
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 25px;
-    width: 100%;
-    height: auto;
-    overflow: visible;
-}
 
-/* .product-card {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: visible;
-} */
 @media (max-width: 1000px) {
     .product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -471,13 +457,35 @@
 }
 
 
+.home-container {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    padding: 30px 50px 60px;
+}
+
 .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
     width: 100%;
     height: auto !important;
     min-height: 0;
     overflow: visible !important;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 25px;
-    padding-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        width: 100%;
+        padding: 20px 15px 40px;
+        overflow: visible;
+    }
+
+    .product-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
 }
