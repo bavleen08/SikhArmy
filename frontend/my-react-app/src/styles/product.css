@@ -1,31 +1,18 @@
-/* =========================
-   HERO BANNER
-========================= */
 
-/* .hero-banner {
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(249, 115, 22, 0.2),
-      transparent 60%
-    ),
-    linear-gradient(135deg, #18181b 0%, #09090b 100%);
-  color: white;
-  padding: 100px 30px;
-  text-align: center;
-  border-radius: 16px;
-  margin-bottom: 50px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
-  overflow: hidden;
-} */
 
 .hero-banner {
     position: relative;
-    background-image: url("/coverimg.jpeg");
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-image: url("/coverimg.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
     overflow: hidden;
 }
 
@@ -33,25 +20,63 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.72);
 }
 
 .hero-banner p {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
+
+    max-width: 800px;
+    padding: 20px;
+
+    font-size: 2rem;
+    line-height: 1.3;
+    margin: 0;
+
+    color: white;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
 }
 
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 240px;
+        background-position: center;
+    }
+
+    .hero-banner p {
+        font-size: 1.4rem;
+        padding: 15px;
+    }
+}
 
 /* =========================
    PRODUCT GRID
 ========================= */
 
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+@media (max-width: 1000px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =========================
