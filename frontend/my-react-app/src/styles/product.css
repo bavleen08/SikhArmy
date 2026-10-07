@@ -367,23 +367,41 @@
 ========================= */
 
 /* =========================
-   PRODUCT DETAIL
+   PRODUCT DETAIL PAGE
+========================= */
+
+.product-detail-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PRODUCT DETAIL CARD
 ========================= */
 
 .product-detail {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 50px;
 
     width: 100%;
     max-width: 1200px;
+    min-width: 0;
+
     margin: 0 auto;
 
-    background: #18181b;
+    gap: 50px;
     padding: 40px;
+
+    background: #18181b;
 
     border-radius: 16px;
     border: 1px solid #27272a;
+
+    box-sizing: border-box;
 
     overflow: hidden;
 }
@@ -395,7 +413,10 @@
 
 .detail-image-container {
     width: 100%;
+    max-width: 100%;
     min-width: 0;
+
+    box-sizing: border-box;
 }
 
 .detail-image {
@@ -403,27 +424,44 @@
 
     width: 100%;
     max-width: 100%;
+
     height: 600px;
+    max-height: 600px;
+
+    object-fit: cover;
 
     border-radius: 12px;
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
-    object-fit: cover;
+    box-sizing: border-box;
 }
 
 
 /* =========================
-   PRODUCT INFORMATION
+   INFORMATION
 ========================= */
 
 .detail-info {
     width: 100%;
+    max-width: 100%;
     min-width: 0;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    box-sizing: border-box;
+}
+
+.detail-info h2,
+.detail-info h4,
+.detail-info p {
+    max-width: 100%;
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .detail-info h2 {
@@ -433,11 +471,11 @@
     margin-bottom: 15px;
 
     color: #ffffff;
-
-    overflow-wrap: anywhere;
 }
 
 .detail-price {
+    max-width: 100%;
+
     font-size: 2rem;
     line-height: 1.2;
 
@@ -445,6 +483,8 @@
     font-weight: 700;
 
     margin-bottom: 25px;
+
+    overflow-wrap: anywhere;
 }
 
 .detail-info p {
@@ -454,8 +494,6 @@
     font-size: 1.1rem;
 
     margin-bottom: 20px;
-
-    overflow-wrap: anywhere;
 }
 
 
@@ -466,13 +504,11 @@
 @media (max-width: 900px) {
 
     .product-detail {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
 
         gap: 30px;
 
         padding: 25px;
-
-        border-radius: 14px;
     }
 
     .detail-image {
@@ -496,22 +532,23 @@
 
 @media (max-width: 600px) {
 
-    /* Outer page */
-
     .product-detail-wrapper {
         width: 100%;
         max-width: 100%;
 
         padding: 10px !important;
 
+        box-sizing: border-box;
+
         overflow-x: hidden;
     }
 
-
-    /* Breadcrumb */
-
     .product-detail-wrapper > div:first-child {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
 
         font-size: 0.78rem !important;
         line-height: 1.5;
@@ -519,10 +556,8 @@
         margin-bottom: 12px !important;
 
         overflow-wrap: anywhere;
+        word-break: break-word;
     }
-
-
-    /* Main card */
 
     .product-detail {
         display: flex;
@@ -530,39 +565,51 @@
 
         width: 100%;
         max-width: 100%;
+        min-width: 0;
 
         gap: 18px;
 
         padding: 15px;
 
         border-radius: 12px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
     }
 
 
-    /* Product image */
+    /* IMAGE */
 
     .detail-image-container {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .detail-image {
         display: block;
 
         width: 100%;
+        max-width: 100%;
+
         height: 260px;
         max-height: 260px;
 
         object-fit: cover;
 
         border-radius: 10px;
+
+        box-sizing: border-box;
     }
 
 
-    /* Product information */
+    /* INFO */
 
     .detail-info {
         width: 100%;
         max-width: 100%;
+        min-width: 0;
     }
 
     .detail-info h2 {
@@ -573,21 +620,28 @@
     }
 
     .detail-price {
+        width: 100%;
+        max-width: 100%;
+
         font-size: 1.7rem !important;
-        line-height: 1.2;
 
         margin: 8px 0 15px !important;
     }
 
     .detail-info p {
+        max-width: 100%;
+
         font-size: 0.95rem;
         line-height: 1.55;
 
         margin-bottom: 15px;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
 
-    /* Description heading */
+    /* DESCRIPTION */
 
     .detail-info h4 {
         font-size: 1rem;
@@ -596,12 +650,12 @@
     }
 
 
-    /* =========================
-       FREE DELIVERY BOX
-    ========================= */
+    /* FREE DELIVERY */
 
     .detail-info > div[style*="dashed"] {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
 
         padding: 10px !important;
 
@@ -609,9 +663,9 @@
 
         gap: 8px !important;
 
-        border-radius: 8px;
-
         box-sizing: border-box;
+
+        overflow: hidden;
     }
 
     .detail-info > div[style*="dashed"] span {
@@ -620,75 +674,90 @@
 
     .detail-info > div[style*="dashed"] p {
         font-size: 0.75rem !important;
-
         line-height: 1.4;
 
         margin-bottom: 2px !important;
     }
 
 
-    /* =========================
-       ADD TO CART AREA
-    ========================= */
+    /* ADD TO CART / BUY BUTTONS */
 
     .detail-info > div[style*="display: flex"] {
-        width: 100%;
+        display: flex !important;
 
-        display: flex;
-        gap: 10px !important;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        gap: 8px !important;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+    .detail-info > div[style*="display: flex"] > * {
+        min-width: 0 !important;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .detail-info .btn {
-        flex: 1;
+        flex: 1 1 0;
 
-        min-width: 0;
+        min-width: 0 !important;
+        max-width: 100%;
 
-        padding: 13px !important;
+        padding: 12px !important;
 
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
 
         white-space: nowrap;
+
+        box-sizing: border-box;
     }
 
 
-    /* Stock */
+    /* STOCK */
 
     .detail-info > p:last-child {
+        max-width: 100%;
+
         font-size: 0.85rem;
 
         margin-top: 12px !important;
+
+        overflow-wrap: anywhere;
     }
 }
 
 
 /* =========================
-   SMALL PHONES
+   VERY SMALL PHONES
 ========================= */
 
 @media (max-width: 400px) {
 
     .product-detail-wrapper {
-        padding: 8px !important;
+        padding: 6px !important;
     }
 
     .product-detail {
-        padding: 12px;
+        width: 100%;
+        max-width: 100%;
+
+        padding: 10px;
 
         gap: 15px;
 
         border-radius: 10px;
     }
 
-
-    /* Smaller product image */
-
     .detail-image {
+        width: 100%;
         height: 220px;
         max-height: 220px;
     }
-
-
-    /* Smaller heading */
 
     .detail-info h2 {
         font-size: 1.5rem !important;
@@ -702,13 +771,9 @@
         font-size: 0.9rem;
     }
 
-
-    /* Buttons */
-
     .detail-info .btn {
-        padding: 12px !important;
-
-        font-size: 0.9rem !important;
+        padding: 11px !important;
+        font-size: 0.82rem !important;
     }
 }
 
