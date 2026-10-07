@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
       </Link>
 
       <div className="free-delivery-box">
-        🚚 Free Delivery
+         Free Delivery
       </div>
 
     </div>

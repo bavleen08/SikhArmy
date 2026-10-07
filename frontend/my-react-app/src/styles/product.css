@@ -142,7 +142,7 @@
     font-size: 1.1rem;
     margin-bottom: 10px;
     color: #fff;
-    text-decoration: none;
+    text-decoration: none !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -157,7 +157,7 @@
 }
 
 .product-card .product-info .view-button-details {
-    text-decoration: none;
+    text-decoration: none !important;
     color: #f97316 !important;
 }
 
