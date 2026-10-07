@@ -12,7 +12,7 @@ const Home = () => {
         const res = await fetch(`${API_URL}/api/products`);
         const data = await res.json();
         console.log(data);
-        setProducts(data.slice(0, 4)); // Featured products
+        setProducts(data); // Featured products
       } catch (error) {
         console.error(error);
       } finally {
