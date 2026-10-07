@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
     <div className="product-card">
 
       <Link
-        to={`/products/${product._id}`}
+        to={`/api/products/${product._id}`}
         className="product-card-link"
       >
         <img
