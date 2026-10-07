@@ -366,53 +366,98 @@
    PRODUCT DETAIL PAGE
 ========================= */
 
+/* =========================
+   PRODUCT DETAIL
+========================= */
+
 .product-detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  background: #18181b;
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid #27272a;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 50px;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    background: #18181b;
+    padding: 40px;
+
+    border-radius: 16px;
+    border: 1px solid #27272a;
+
+    overflow: hidden;
 }
 
+
+/* =========================
+   IMAGE
+========================= */
+
 .detail-image-container {
-  width: 100%;
+    width: 100%;
+    min-width: 0;
 }
 
 .detail-image {
-  width: 100%;
-  max-height: 600px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  object-fit: cover;
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: 600px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    object-fit: cover;
 }
 
+
+/* =========================
+   PRODUCT INFORMATION
+========================= */
+
 .detail-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .detail-info h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #ffffff;
+    font-size: 2.5rem;
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    overflow-wrap: anywhere;
 }
 
 .detail-price {
-  font-size: 2rem;
-  color: #f97316 !important;
-  font-weight: 700;
-  margin-bottom: 25px;
+    font-size: 2rem;
+    line-height: 1.2;
+
+    color: #f97316 !important;
+    font-weight: 700;
+
+    margin-bottom: 25px;
 }
 
 .detail-info p {
-  color: #a1a1aa;
-  line-height: 1.7;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+    color: #a1a1aa;
+
+    line-height: 1.7;
+    font-size: 1.1rem;
+
+    margin-bottom: 20px;
+
+    overflow-wrap: anywhere;
 }
+
 
 /* =========================
    TABLET
@@ -420,20 +465,30 @@
 
 @media (max-width: 900px) {
 
-  .product-detail {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 25px;
-  }
+    .product-detail {
+        grid-template-columns: 1fr;
 
-  .detail-image {
-    max-height: 500px;
-  }
+        gap: 30px;
 
-  .detail-info {
-    justify-content: flex-start;
-  }
+        padding: 25px;
+
+        border-radius: 14px;
+    }
+
+    .detail-image {
+        height: 500px;
+        max-height: 500px;
+    }
+
+    .detail-info {
+        justify-content: flex-start;
+    }
+
+    .detail-info h2 {
+        font-size: 2.2rem;
+    }
 }
+
 
 /* =========================
    MOBILE
@@ -441,101 +496,170 @@
 
 @media (max-width: 600px) {
 
-  /* Detail page outer container */
-  .product-detail-wrapper {
-    padding: 10px !important;
-  }
+    /* Outer page */
 
-  /* Breadcrumb */
-  .product-detail-wrapper > div:first-child {
-    font-size: 0.78rem !important;
-    margin-bottom: 12px !important;
-    line-height: 1.5;
-  }
+    .product-detail-wrapper {
+        width: 100%;
+        max-width: 100%;
 
-  /* Main detail card */
-  .product-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    padding: 15px;
-    border-radius: 12px;
-  }
+        padding: 10px !important;
 
-  /* Product image */
-  .detail-image-container {
-    width: 100%;
-  }
+        overflow-x: hidden;
+    }
 
-  .detail-image {
-    width: 100%;
-    height: 260px;
-    max-height: 260px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
 
-  /* Product information */
-  .detail-info {
-    width: 100%;
-  }
+    /* Breadcrumb */
 
-  .detail-info h2 {
-    font-size: 1.7rem !important;
-    line-height: 1.25;
-    margin-bottom: 8px !important;
-  }
+    .product-detail-wrapper > div:first-child {
+        width: 100%;
 
-  .detail-price {
-    font-size: 1.7rem !important;
-    margin: 8px 0 15px !important;
-  }
+        font-size: 0.78rem !important;
+        line-height: 1.5;
 
-  .detail-info p {
-    font-size: 0.95rem;
-    line-height: 1.55;
-    margin-bottom: 15px;
-  }
+        margin-bottom: 12px !important;
 
-  /* Description heading */
-  .detail-info h4 {
-    font-size: 1rem;
-    margin-bottom: 6px !important;
-  }
+        overflow-wrap: anywhere;
+    }
 
-  /* Free delivery box */
-  .detail-info > div[style*="dashed"] {
-    padding: 10px !important;
-    margin-bottom: 12px !important;
-    gap: 8px !important;
-  }
 
-  .detail-info > div[style*="dashed"] span {
-    font-size: 1.1rem !important;
-  }
+    /* Main card */
 
-  .detail-info > div[style*="dashed"] p {
-    font-size: 0.75rem !important;
-    line-height: 1.4;
-    margin-bottom: 2px !important;
-  }
+    .product-detail {
+        display: flex;
+        flex-direction: column;
 
-  /* Add to cart area */
-  .detail-info > div[style*="display: flex"] {
-    gap: 10px !important;
-  }
+        width: 100%;
+        max-width: 100%;
 
-  .detail-info .btn {
-    padding: 13px !important;
-    font-size: 1rem !important;
-  }
+        gap: 18px;
 
-  /* Stock */
-  .detail-info > p:last-child {
-    font-size: 0.85rem;
-    margin-top: 12px !important;
-  }
+        padding: 15px;
+
+        border-radius: 12px;
+    }
+
+
+    /* Product image */
+
+    .detail-image-container {
+        width: 100%;
+    }
+
+    .detail-image {
+        display: block;
+
+        width: 100%;
+        height: 260px;
+        max-height: 260px;
+
+        object-fit: cover;
+
+        border-radius: 10px;
+    }
+
+
+    /* Product information */
+
+    .detail-info {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .detail-info h2 {
+        font-size: 1.7rem !important;
+        line-height: 1.25;
+
+        margin-bottom: 8px !important;
+    }
+
+    .detail-price {
+        font-size: 1.7rem !important;
+        line-height: 1.2;
+
+        margin: 8px 0 15px !important;
+    }
+
+    .detail-info p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* Description heading */
+
+    .detail-info h4 {
+        font-size: 1rem;
+
+        margin-bottom: 6px !important;
+    }
+
+
+    /* =========================
+       FREE DELIVERY BOX
+    ========================= */
+
+    .detail-info > div[style*="dashed"] {
+        width: 100%;
+
+        padding: 10px !important;
+
+        margin-bottom: 12px !important;
+
+        gap: 8px !important;
+
+        border-radius: 8px;
+
+        box-sizing: border-box;
+    }
+
+    .detail-info > div[style*="dashed"] span {
+        font-size: 1.1rem !important;
+    }
+
+    .detail-info > div[style*="dashed"] p {
+        font-size: 0.75rem !important;
+
+        line-height: 1.4;
+
+        margin-bottom: 2px !important;
+    }
+
+
+    /* =========================
+       ADD TO CART AREA
+    ========================= */
+
+    .detail-info > div[style*="display: flex"] {
+        width: 100%;
+
+        display: flex;
+        gap: 10px !important;
+    }
+
+    .detail-info .btn {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 13px !important;
+
+        font-size: 1rem !important;
+
+        white-space: nowrap;
+    }
+
+
+    /* Stock */
+
+    .detail-info > p:last-child {
+        font-size: 0.85rem;
+
+        margin-top: 12px !important;
+    }
 }
+
 
 /* =========================
    SMALL PHONES
@@ -543,32 +667,49 @@
 
 @media (max-width: 400px) {
 
-  .product-detail {
-    padding: 12px;
-    gap: 15px;
-  }
+    .product-detail-wrapper {
+        padding: 8px !important;
+    }
 
-  .detail-image {
-    height: 220px;
-    max-height: 220px;
-  }
+    .product-detail {
+        padding: 12px;
 
-  .detail-info h2 {
-    font-size: 1.5rem !important;
-  }
+        gap: 15px;
 
-  .detail-price {
-    font-size: 1.5rem !important;
-  }
+        border-radius: 10px;
+    }
 
-  .detail-info p {
-    font-size: 0.9rem;
-  }
 
-  .detail-info .btn {
-    padding: 12px !important;
-    font-size: 0.95rem !important;
-  }
+    /* Smaller product image */
+
+    .detail-image {
+        height: 220px;
+        max-height: 220px;
+    }
+
+
+    /* Smaller heading */
+
+    .detail-info h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .detail-price {
+        font-size: 1.5rem !important;
+    }
+
+    .detail-info p {
+        font-size: 0.9rem;
+    }
+
+
+    /* Buttons */
+
+    .detail-info .btn {
+        padding: 12px !important;
+
+        font-size: 0.9rem !important;
+    }
 }
 
 
