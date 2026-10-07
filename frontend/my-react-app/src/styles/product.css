@@ -8,7 +8,7 @@
     justify-content: center;
     text-align: center;
 
-    background-image: url("/coverimg.jpg");
+    background-image: url("/coverimg.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,19 +56,28 @@
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 25px;
     width: 100%;
+    height: auto;
+    overflow: visible;
 }
+
+/* .product-card {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+} */
 @media (max-width: 1000px) {
     .product-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 700px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 15px;
     }
 }
