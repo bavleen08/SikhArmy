@@ -9,7 +9,7 @@ const AwaitingPayment = () => {
   const { orderId, total } = location.state || { orderId: 'Pending', total: 0 };
 
   const handleRetryWhatsApp = () => {
-    const ownerPersonalNumber = "917717323249";
+    const ownerPersonalNumber = "918264344978";
     const backupMessage = encodeURIComponent(
       `🙏 *Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fateh!*\n\n` +
       `Ji, I am finalizing payment for my Order #${orderId} for ₹${total.toFixed(2)}. Please drop your UPI QR code here! 🙌`
