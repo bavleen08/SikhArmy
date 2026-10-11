@@ -405,18 +405,17 @@ const Checkout = () => {
         paymentMethod === 'WhatsApp'
       ) {
 
-        navigate(
-          '/awaiting-payment',
-          {
-            state: {
-              orderId:
-                data.orderId,
 
-              total:
-                totalPrice
-            }
-          }
-        );
+navigate('/awaiting-payment', {
+  state: {
+    orderId: data.orderId,
+    total: totalPrice,
+    orderItems: cartItems.map((item) => ({
+      name: item.name || item.product?.name || 'Product',
+    })),
+  },
+});
+
 
       } else {
 
