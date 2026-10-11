@@ -6,13 +6,13 @@ const AwaitingPayment = () => {
   const navigate = useNavigate();
   
   // Extract tracking state passed down from checkout form submit action
-  const { orderId, total } = location.state || { orderId: 'Pending', total: 0 };
+  const { orderId, total, orderName } = location.state || { orderId: 'Pending', total: 0, orderName: 'Pending' };
 
   const handleRetryWhatsApp = () => {
-    const ownerPersonalNumber = "918264344978";
+    const ownerPersonalNumber = "917717323249";
     const backupMessage = encodeURIComponent(
       `🙏 *Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fateh!*\n\n` +
-      `Ji, I am finalizing payment for my Order #${orderId} for ₹${total.toFixed(2)}. Please drop your UPI QR code here! 🙌`
+      `Ji, I am finalizing payment for my Order #${orderId} of ${orderName} for ₹${total.toFixed(2)}. Please drop your UPI QR code here! 🙌`
     );
     window.open(`https://wa.me/${ownerPersonalNumber}?text=${backupMessage}`, '_blank');
   };
@@ -30,6 +30,7 @@ const AwaitingPayment = () => {
 
       <div style={{ background: '#09090b', padding: '20px', borderRadius: '8px', marginBottom: '25px', textAlign: 'left', border: '1px solid #27272a' }}>
         <p style={{ margin: '0 0 8px 0' }}><strong>Order Number:</strong> <span style={{ color: '#f97316', fontFamily: 'monospace' }}>#{orderId}</span></p>
+        <p style={{ margin: '0' }}><strong>Order Name:</strong> <span style={{ color: '#f97316', fontFamily: 'monospace' }}>{orderName}</span></p>
         <p style={{ margin: '0' }}><strong>Total Bill Due:</strong> <span style={{ color: '#10b981', fontWeight: 'bold' }}>₹{total.toFixed(2)}</span></p>
       </div>
 

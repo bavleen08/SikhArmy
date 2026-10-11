@@ -123,7 +123,7 @@ const Footer = () => {
 
           <div>
             <p style={{color: "#a1a1aa"}}>Contact us for any queries:</p>
-            <p style={{color: "#a1a1aa"}}> +91 7717323249, +91 8264344978</p>
+            <p style={{color: "#a1a1aa"}}> +91 7717323249</p>
           </div>
 
         </div>
